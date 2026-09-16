@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Trained artifacts and generated reports — rebuild with `make all`
+artifacts/*.joblib
+artifacts/*.csv
+reports/*
+!reports/.gitkeep
+
+# The Bitext CSV is licensed; download it yourself from Kaggle
+data/bitext.csv
+data/*.zip
+
+# Deployment build output
+layer/
+*.zip
+.pytest_cache/
+.DS_Store

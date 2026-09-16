@@ -1,0 +1,37 @@
+{
+  "_comment": "Alarms worth having on day one. FallbackRate is the product health metric — a jump means the KB has a gap or an upstream change broke retrieval.",
+  "Alarms": [
+    {
+      "AlarmName": "faq-chatbot-high-fallback-rate",
+      "Namespace": "FaqChatbot",
+      "MetricName": "FallbackCount",
+      "Statistic": "Average",
+      "Period": 300,
+      "EvaluationPeriods": 3,
+      "Threshold": 0.25,
+      "ComparisonOperator": "GreaterThanThreshold",
+      "TreatMissingData": "notBreaching"
+    },
+    {
+      "AlarmName": "faq-chatbot-slow-responses",
+      "Namespace": "FaqChatbot",
+      "MetricName": "ResponseTimeMs",
+      "ExtendedStatistic": "p95",
+      "Period": 300,
+      "EvaluationPeriods": 2,
+      "Threshold": 800,
+      "ComparisonOperator": "GreaterThanThreshold"
+    },
+    {
+      "AlarmName": "faq-chatbot-low-confidence-drift",
+      "Namespace": "FaqChatbot",
+      "MetricName": "RetrievalScore",
+      "Statistic": "Average",
+      "Period": 3600,
+      "EvaluationPeriods": 6,
+      "Threshold": 0.5,
+      "ComparisonOperator": "LessThanThreshold",
+      "_comment": "Slow decline in mean similarity = user language drifting away from the training corpus. Retrain trigger."
+    }
+  ]
+}

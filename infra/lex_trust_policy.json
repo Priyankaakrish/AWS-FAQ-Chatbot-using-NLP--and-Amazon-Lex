@@ -1,0 +1,12 @@
+{
+  "_comment": "Attach to the Lambda so Amazon Lex V2 is allowed to invoke it as a code hook.",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "Service": "lexv2.amazonaws.com" },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:*:*:function:faq-chatbot-handler"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["dynamodb:PutItem","dynamodb:Query","dynamodb:Scan"],"Resource":"*"},{"Effect":"Allow","Action":["bedrock:InvokeModel"],"Resource":"*"}]}

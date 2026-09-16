@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "_comment": "Least-privilege execution role for the Lex fulfillment Lambda. Bedrock and S3 statements are only needed for the corresponding embedding backend / artifact source; delete whichever you do not use.",
+  "Statement": [
+    {
+      "Sid": "Logging",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/faq-chatbot-handler:*"
+    },
+    {
+      "Sid": "InteractionLogging",
+      "Effect": "Allow",
+      "Action": ["dynamodb:PutItem"],
+      "Resource": "arn:aws:dynamodb:*:*:table/faq-chatbot-interactions"
+    },
+    {
+      "Sid": "AnalyticsRead",
+      "Effect": "Allow",
+      "Action": ["dynamodb:Query", "dynamodb:Scan"],
+      "Resource": [
+        "arn:aws:dynamodb:*:*:table/faq-chatbot-interactions",
+        "arn:aws:dynamodb:*:*:table/faq-chatbot-interactions/index/*"
+      ]
+    },
+    {
+      "Sid": "ArtifactsFromS3Optional",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::YOUR-ARTIFACT-BUCKET/artifacts/*"
+    },
+    {
+      "Sid": "BedrockEmbeddingsOptional",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel"],
+      "Resource": "arn:aws:bedrock:*::foundation-model/amazon.titan-embed-text-v2:0"
+    }
+  ]
+}

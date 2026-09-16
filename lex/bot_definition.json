@@ -1,0 +1,637 @@
+{
+  "botName": "AwsFaqChatbot",
+  "localeId": "en_US",
+  "nluIntentConfidenceThreshold": 0.4,
+  "description": "FAQ chatbot generated from the Bitext customer-support corpus.",
+  "intents": [
+    {
+      "intentName": "CancelOrder",
+      "description": "Bitext intent 'cancel_order' (category ORDER)",
+      "sampleUtterances": [
+        {
+          "utterance": "hey there please cancel the purchase i just made asap"
+        },
+        {
+          "utterance": "i want to call off order {OrderId}?"
+        },
+        {
+          "utterance": "i need help, can i stop my order from shipping please"
+        },
+        {
+          "utterance": "hi cancel my recent purchase thanks"
+        },
+        {
+          "utterance": "hello, how do i cancel my order asap"
+        },
+        {
+          "utterance": "i need help, i need to cancel order {OrderId} thanks"
+        },
+        {
+          "utterance": "hey there cancel my recent purchase asap"
+        },
+        {
+          "utterance": "hello, cancel my recent purchase please"
+        },
+        {
+          "utterance": "i need help, how do i cancel my order thanks"
+        },
+        {
+          "utterance": "hey there how do i cancel my order please"
+        },
+        {
+          "utterance": "i need help, cancel my recent purchase!"
+        },
+        {
+          "utterance": "hey there can i stop my order from shipping thanks"
+        },
+        {
+          "utterance": "please i need to cancel order {OrderId} asap"
+        },
+        {
+          "utterance": "hello, please cancel the purchase i just made thanks"
+        },
+        {
+          "utterance": "hey there i need to cancel order {OrderId}?"
+        }
+      ],
+      "slots": [
+        {
+          "slotName": "OrderId",
+          "slotTypeName": "AMAZON.AlphaNumeric",
+          "valueElicitationSetting": {
+            "slotConstraint": "Optional",
+            "promptSpecification": {
+              "maxRetries": 2,
+              "messageGroupsList": [
+                {
+                  "message": {
+                    "plainTextMessage": {
+                      "value": "What is your order number?"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "slotPriorities": [
+        {
+          "priority": 1,
+          "slotName": "OrderId"
+        }
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "CreateAccount",
+      "description": "Bitext intent 'create_account' (category ACCOUNT)",
+      "sampleUtterances": [
+        {
+          "utterance": "hey there what do i need to open an account thanks"
+        },
+        {
+          "utterance": "hi help me create a new profile!"
+        },
+        {
+          "utterance": "please how do i register asap"
+        },
+        {
+          "utterance": "hello, registration help?"
+        },
+        {
+          "utterance": "please sign me up for an account"
+        },
+        {
+          "utterance": "please i want to open an account please"
+        },
+        {
+          "utterance": "hey there registration help asap"
+        },
+        {
+          "utterance": "please registration help thanks"
+        },
+        {
+          "utterance": "hi how do i register thanks"
+        },
+        {
+          "utterance": "hi registration help?"
+        },
+        {
+          "utterance": "hey there how do i register"
+        },
+        {
+          "utterance": "hey there i want to open an account asap"
+        },
+        {
+          "utterance": "i need help, registration help?"
+        },
+        {
+          "utterance": "i need help, i want to open an account"
+        },
+        {
+          "utterance": "i need help, how do i register"
+        }
+      ],
+      "slots": [],
+      "slotPriorities": [],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "DeliveryOptions",
+      "description": "Bitext intent 'delivery_options' (category DELIVERY)",
+      "sampleUtterances": [
+        {
+          "utterance": "i need help, what shipping options do you offer asap"
+        },
+        {
+          "utterance": "hey there delivery times to my area!"
+        },
+        {
+          "utterance": "hello, how much is express delivery thanks"
+        },
+        {
+          "utterance": "hi when will my order arrive please"
+        },
+        {
+          "utterance": "please is next day shipping available"
+        },
+        {
+          "utterance": "hi do you deliver to {City} please"
+        },
+        {
+          "utterance": "i need help, delivery times to my area asap"
+        },
+        {
+          "utterance": "hey there how much is express delivery please"
+        },
+        {
+          "utterance": "i need help, how much is express delivery asap"
+        },
+        {
+          "utterance": "hey there what shipping options do you offer please"
+        },
+        {
+          "utterance": "hey there when will my order arrive asap"
+        },
+        {
+          "utterance": "i need help, do you deliver to {City} asap"
+        },
+        {
+          "utterance": "i need help, when will my order arrive thanks"
+        },
+        {
+          "utterance": "hey there do you deliver to {City} thanks"
+        },
+        {
+          "utterance": "hello, delivery times to my area thanks"
+        }
+      ],
+      "slots": [
+        {
+          "slotName": "City",
+          "slotTypeName": "AMAZON.City",
+          "valueElicitationSetting": {
+            "slotConstraint": "Optional",
+            "promptSpecification": {
+              "maxRetries": 2,
+              "messageGroupsList": [
+                {
+                  "message": {
+                    "plainTextMessage": {
+                      "value": "What is the city?"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "slotPriorities": [
+        {
+          "priority": 1,
+          "slotName": "City"
+        }
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "GetRefund",
+      "description": "Bitext intent 'get_refund' (category REFUND)",
+      "sampleUtterances": [
+        {
+          "utterance": "hey there when will my refund of {Amount} arrive please"
+        },
+        {
+          "utterance": "hi i was charged but never received the item"
+        },
+        {
+          "utterance": "i need help, requesting reimbursement for my purchase asap"
+        },
+        {
+          "utterance": "hello, how do i get my money back thanks"
+        },
+        {
+          "utterance": "i want a refund for order {OrderId}?"
+        },
+        {
+          "utterance": "hi refund status please thanks"
+        },
+        {
+          "utterance": "i need help, refund status please asap"
+        },
+        {
+          "utterance": "hey there refund status please please"
+        },
+        {
+          "utterance": "hey there requesting reimbursement for my purchase thanks"
+        },
+        {
+          "utterance": "please refund status please?"
+        },
+        {
+          "utterance": "hello, requesting reimbursement for my purchase please"
+        },
+        {
+          "utterance": "hey there how do i get my money back please"
+        },
+        {
+          "utterance": "please how do i get my money back asap"
+        },
+        {
+          "utterance": "i need help, when will my refund of {Amount} arrive thanks"
+        },
+        {
+          "utterance": "i need help, how do i get my money back"
+        }
+      ],
+      "slots": [
+        {
+          "slotName": "Amount",
+          "slotTypeName": "AMAZON.Number",
+          "valueElicitationSetting": {
+            "slotConstraint": "Optional",
+            "promptSpecification": {
+              "maxRetries": 2,
+              "messageGroupsList": [
+                {
+                  "message": {
+                    "plainTextMessage": {
+                      "value": "How much was the amount?"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "slotName": "OrderId",
+          "slotTypeName": "AMAZON.AlphaNumeric",
+          "valueElicitationSetting": {
+            "slotConstraint": "Optional",
+            "promptSpecification": {
+              "maxRetries": 2,
+              "messageGroupsList": [
+                {
+                  "message": {
+                    "plainTextMessage": {
+                      "value": "What is your order number?"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "slotPriorities": [
+        {
+          "priority": 1,
+          "slotName": "Amount"
+        },
+        {
+          "priority": 2,
+          "slotName": "OrderId"
+        }
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "ManageNewsletter",
+      "description": "Bitext intent 'manage_newsletter' (category SUBSCRIPTION)",
+      "sampleUtterances": [
+        {
+          "utterance": "i need help, how do i subscribe to your newsletter asap"
+        },
+        {
+          "utterance": "hello, change my email preferences thanks"
+        },
+        {
+          "utterance": "please stop sending me marketing emails please"
+        },
+        {
+          "utterance": "hey there too many promotional emails?"
+        },
+        {
+          "utterance": "hi i want to opt out of emails?"
+        },
+        {
+          "utterance": "hello, unsubscribe me from the newsletter"
+        },
+        {
+          "utterance": "please change my email preferences please"
+        },
+        {
+          "utterance": "i need help, too many promotional emails asap"
+        },
+        {
+          "utterance": "i need help, change my email preferences"
+        },
+        {
+          "utterance": "i need help, stop sending me marketing emails thanks"
+        },
+        {
+          "utterance": "hey there change my email preferences"
+        },
+        {
+          "utterance": "hey there stop sending me marketing emails asap"
+        },
+        {
+          "utterance": "please too many promotional emails please"
+        },
+        {
+          "utterance": "hi too many promotional emails thanks"
+        },
+        {
+          "utterance": "hey there how do i subscribe to your newsletter please"
+        }
+      ],
+      "slots": [],
+      "slotPriorities": [],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "PaymentIssue",
+      "description": "Bitext intent 'payment_issue' (category PAYMENT)",
+      "sampleUtterances": [
+        {
+          "utterance": "i need help, why is my payment not going through thanks"
+        },
+        {
+          "utterance": "i was charged twice for order {OrderId} asap"
+        },
+        {
+          "utterance": "hey there problem paying with my credit card please"
+        },
+        {
+          "utterance": "hi double charge on my account?"
+        },
+        {
+          "utterance": "hello, the card was declined at checkout!"
+        },
+        {
+          "utterance": "please my payment failed asap"
+        },
+        {
+          "utterance": "hey there my payment failed thanks"
+        },
+        {
+          "utterance": "i need help, my payment failed?"
+        },
+        {
+          "utterance": "hello, my payment failed please"
+        },
+        {
+          "utterance": "hi my payment failed?"
+        },
+        {
+          "utterance": "i need help, problem paying with my credit card thanks"
+        },
+        {
+          "utterance": "hi problem paying with my credit card asap"
+        },
+        {
+          "utterance": "hey there why is my payment not going through please"
+        },
+        {
+          "utterance": "hello, why is my payment not going through asap"
+        },
+        {
+          "utterance": "i need help, double charge on my account asap"
+        }
+      ],
+      "slots": [
+        {
+          "slotName": "OrderId",
+          "slotTypeName": "AMAZON.AlphaNumeric",
+          "valueElicitationSetting": {
+            "slotConstraint": "Optional",
+            "promptSpecification": {
+              "maxRetries": 2,
+              "messageGroupsList": [
+                {
+                  "message": {
+                    "plainTextMessage": {
+                      "value": "What is your order number?"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "slotPriorities": [
+        {
+          "priority": 1,
+          "slotName": "OrderId"
+        }
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "RecoverPassword",
+      "description": "Bitext intent 'recover_password' (category ACCOUNT)",
+      "sampleUtterances": [
+        {
+          "utterance": "i need help, i need to recover access to my account asap"
+        },
+        {
+          "utterance": "please password reset email not arriving please"
+        },
+        {
+          "utterance": "hi locked out of my profile thanks"
+        },
+        {
+          "utterance": "hey there i forgot my password?"
+        },
+        {
+          "utterance": "hello, cannot log into my account thanks"
+        },
+        {
+          "utterance": "hello, how do i reset my password asap"
+        },
+        {
+          "utterance": "i need help, i forgot my password thanks"
+        },
+        {
+          "utterance": "please i forgot my password please"
+        },
+        {
+          "utterance": "hi i forgot my password?"
+        },
+        {
+          "utterance": "hello, i forgot my password asap"
+        },
+        {
+          "utterance": "hey there password reset email not arriving asap"
+        },
+        {
+          "utterance": "hey there how do i reset my password?"
+        },
+        {
+          "utterance": "hi how do i reset my password thanks"
+        },
+        {
+          "utterance": "i need help, how do i reset my password please"
+        },
+        {
+          "utterance": "i need help, cannot log into my account please"
+        }
+      ],
+      "slots": [],
+      "slotPriorities": [],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "TrackOrder",
+      "description": "Bitext intent 'track_order' (category ORDER)",
+      "sampleUtterances": [
+        {
+          "utterance": "hey there i want to check the status of order {OrderId} thanks"
+        },
+        {
+          "utterance": "has my parcel shipped yet please"
+        },
+        {
+          "utterance": "i need help, can you tell me where my package is asap"
+        },
+        {
+          "utterance": "hello, status of my delivery please asap"
+        },
+        {
+          "utterance": "hi where is my order {OrderId} asap"
+        },
+        {
+          "utterance": "i need help, track order {OrderId}"
+        },
+        {
+          "utterance": "hey there track order {OrderId} please"
+        },
+        {
+          "utterance": "hi track order {OrderId} thanks"
+        },
+        {
+          "utterance": "i need help, status of my delivery please thanks"
+        },
+        {
+          "utterance": "hey there status of my delivery please please"
+        },
+        {
+          "utterance": "please track order {OrderId} asap"
+        },
+        {
+          "utterance": "hello, track order {OrderId}"
+        },
+        {
+          "utterance": "i need help, where is my order {OrderId} please"
+        },
+        {
+          "utterance": "hey there where is my order {OrderId} thanks"
+        },
+        {
+          "utterance": "hi status of my delivery please?"
+        }
+      ],
+      "slots": [
+        {
+          "slotName": "OrderId",
+          "slotTypeName": "AMAZON.AlphaNumeric",
+          "valueElicitationSetting": {
+            "slotConstraint": "Optional",
+            "promptSpecification": {
+              "maxRetries": 2,
+              "messageGroupsList": [
+                {
+                  "message": {
+                    "plainTextMessage": {
+                      "value": "What is your order number?"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "slotPriorities": [
+        {
+          "priority": 1,
+          "slotName": "OrderId"
+        }
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      },
+      "dialogCodeHook": {
+        "enabled": false
+      }
+    },
+    {
+      "intentName": "FallbackIntent",
+      "parentIntentSignature": "AMAZON.FallbackIntent",
+      "description": "Routes unmatched utterances to semantic FAQ retrieval in Lambda.",
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    }
+  ],
+  "slotTypes": []
+}

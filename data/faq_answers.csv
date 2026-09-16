@@ -1,0 +1,28 @@
+intent,response
+cancel_order,"You can cancel an order from Orders > Cancel within 60 minutes of purchase. After that the order has entered fulfilment, so please request a return once it arrives."
+change_order,"Order changes are possible while the status is still Processing: open Orders, select the order and choose Edit. Once it ships, the only option is a return and re-order."
+change_shipping_address,"You can change the shipping address until the order ships, from Orders > Edit. After dispatch the carrier may still allow a redirect via your tracking link."
+check_cancellation_fee,"Cancelling within the 60-minute window is free. After fulfilment begins, return shipping may be deducted from the refund."
+check_invoice,"Your invoices are listed under Account > Billing, including invoice {{Invoice Number}} for each completed order."
+check_payment_methods,"We accept major credit and debit cards, PayPal and bank transfer. Available methods are shown at checkout and vary by country."
+check_refund_policy,Items can be returned within 30 days of delivery in original condition. Refunds go to the original payment method once the return is received.
+complaint,I am sorry about this. Please file the details under Help > Complaints and a specialist will review and respond within two business days.
+contact_customer_service,"You can reach support by email, live chat, or phone on {{Customer Support Phone Number}}. Live chat is usually fastest."
+contact_human_agent,I can hand you to a human agent now. Live chat is available during business hours; out of hours we reply by email within one working day.
+create_account,Choose Sign Up and register with your email address. You will receive a verification link to activate the account.
+delete_account,"Account deletion is under Account > Privacy > Delete Account. This is permanent and removes your order history, so download any invoices first."
+delivery_options,Standard delivery takes 3-5 business days and express arrives the next business day. Options and costs are shown at checkout for your address.
+delivery_period,Most orders arrive within 3-5 business days of dispatch. Your confirmation email lists the estimated delivery date for your address.
+edit_account,"Update your name, email, password and preferences under Account > Profile. Changing your email requires confirming the new address."
+get_invoice,Download any invoice as a PDF from Account > Billing. Invoices are also attached to the order confirmation email.
+get_refund,"Start a return from Orders > Return. Once we receive the item, the refund is issued to your original payment method within 5-7 business days."
+newsletter_subscription,Manage email preferences under Account > Communications. Every newsletter also carries a one-click unsubscribe link.
+payment_issue,"Declined payments are usually an issuer block or a billing address mismatch. Confirm the details, try another method, or contact your bank."
+place_order,"Add items to your basket and choose Checkout. You can pay as a guest, but an account lets you track the order and re-order faster."
+recover_password,Use Forgot Password on the sign-in page. The reset link is valid for 30 minutes and sometimes lands in spam.
+registration_problems,"If registration fails, check the email is not already in use and that the verification link has not expired. A new link resolves most cases."
+review,You can leave a review from the product page or the link in your delivery confirmation email. Reviews appear after a short moderation check.
+set_up_shipping_address,"Add a shipping address under Account > Addresses, or enter one at checkout. You can save several and choose a default."
+switch_account,Sign out from the profile menu and sign back in with the other account's credentials. Accounts cannot be merged.
+track_order,Track your order under Orders in your account. A live tracking link is emailed at dispatch and usually activates within 24 hours.
+track_refund,"Refund status appears under Orders > Returns. After we process it, your bank may take a further 3-5 business days to show the credit."
