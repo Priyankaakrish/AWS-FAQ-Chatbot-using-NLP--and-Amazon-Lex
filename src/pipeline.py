@@ -81,7 +81,7 @@ class FaqBot:
             query, k=self.top_k, intent_filter=pred.intent if trust_intent else None
         )
         # If the filtered search came back weak, retry unfiltered before giving up.
-        if trust_intent and (not hits or hits[0].score < self.retriever.retry_threshold):
+        if trust_intent and (not hits or hits[0].score < self.retriever.threshold):
             unfiltered = self.retriever.search(query, k=self.top_k)
             if unfiltered and (not hits or unfiltered[0].score > hits[0].score):
                 hits = unfiltered
