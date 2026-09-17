@@ -4,9 +4,11 @@ Intent classification and semantic FAQ retrieval over customer-support text,
 served from AWS Lambda with out-of-domain fallback detection, interaction
 logging and an optional RAG layer.
 
-![Architecture](docs/architecture.svg)
+<img width="1920" height="1120" alt="architecture" src="https://github.com/user-attachments/assets/3b202aa7-dbe9-46e9-92fb-218d37a01be2" />
+(docs/architecture.svg)
 
-![The chat interface](docs/screenshot.png)
+<img width="2400" height="1400" alt="interface" src="https://github.com/user-attachments/assets/e97f266c-e095-4fa9-b017-70fc992cbf24" />
+(docs/screenshot.png)
 
 **Status:** deployed and answering on AWS Lambda at **35.9 ms** per request.
 The RAG path is implemented and tested but has no generation metrics — see
